@@ -1,7 +1,5 @@
 <html>
 <body>
-
-<span>WELCOME TO THE THUNDERDOME</span>
 <!-- {{.}} references the current object. -->
 {{#userName}}
 Hello, {{.}}!
@@ -14,10 +12,12 @@ Hello, {{.}}!
     <button type="submit">Login</button>
 </form>
 {{/userName}}
+{{#userName}}
 <form action="/add-message" method="post">
     <input type="text" placeholder="" name="messageText"/>
     <button type="submit">Submit Message</button>
 </form>
+Messages by {{.}}
     <ul>
         {{#messages}}
         <li>
@@ -28,7 +28,7 @@ Hello, {{.}}!
         </form>
         </li>
         {{/messages}}
-
     </ul>
+{{/userName}}
 </body>
 </html>
